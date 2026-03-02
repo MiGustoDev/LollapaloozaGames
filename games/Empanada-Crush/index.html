@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Empanada Crush</title>
     <link rel="icon" type="image/png" href="assets/logo/Logo Mi Gusto 2025.png">
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka:wght@400;700&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="css/alerts.css">
     <style>
         body {
@@ -34,11 +32,9 @@
     <div id="game-container"></div>
     <div id="alert-container"></div>
 
-    <!-- Phaser 3 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Phaser y GSAP locales desde node_modules (offline) -->
+    <script src="../../node_modules/phaser/dist/phaser.min.js"></script>
+    <script src="../../node_modules/gsap/dist/gsap.min.js"></script>
 
     <!-- Game Scenes -->
     <script src="js/LevelManager.js"></script>
