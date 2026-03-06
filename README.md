@@ -20,7 +20,8 @@ Los juegos pueden ejecutarse en:
 
 ## Menú principal
 
-![Menú de juegos](public/Menu.png)
+![Menú de juegos Totem](public/Menu1.png)
+![Menú de juegos Mobile](public/Menu2.png)
 
 ## Menú de selección de juego (Catch the Empanada)
 
