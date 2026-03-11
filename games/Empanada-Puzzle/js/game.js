@@ -213,7 +213,7 @@ const handleWin = () => {
     setTimeout(() => {
         resultTitle.textContent = "¡FELICITACIONES!";
         resultTitle.className = "text-amber-500";
-        resultMessage.textContent = "GANASTE UN COMBO DE 2 EMPANADAS";
+        resultMessage.textContent = "¡Completaste el rompecabezas con éxito!";
         resultModal.classList.remove('hidden');
     }, 500);
 };
@@ -225,7 +225,7 @@ const handleGameOver = () => {
 
     resultTitle.textContent = "TIEMPO AGOTADO";
     resultTitle.className = "text-red";
-    resultMessage.textContent = "No te rindas, ¡inténtalo de nuevo para ganar una empanada gratis!";
+    resultMessage.textContent = "No te rindas, ¡inténtalo de nuevo!";
     resultModal.classList.remove('hidden');
 };
 
