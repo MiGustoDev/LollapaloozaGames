@@ -188,6 +188,7 @@ const initApp = () => {
             imgEl.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
             tileEl.appendChild(imgEl);
             tileEl.appendChild(document.createElement('div')).className = 'tile-overlay';
+            tileEl.style.opacity = '0'; // Ocultar por defecto para evitar parpadeos
             tileEl.addEventListener('click', () => handleTileClick(tiles.indexOf(id)));
             setupTouchEvents(tileEl, id);
         }
