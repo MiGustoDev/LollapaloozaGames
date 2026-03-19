@@ -105,15 +105,15 @@ class UIScene extends Phaser.Scene {
         let modalContainer = this.add.container(width / 2, height / 2);
         modalContainer.setScale(0);
 
-        // Dynamic Dimensions
-        const mWidth = isMobile ? 320 : 400;
-        const mHeight = isMobile ? 320 : 360;
-        const hTitle = isMobile ? -80 : -60;
-        const titleSize = isMobile ? '28px' : '32px';
-        const btnY = isMobile ? 35 : 70;
-        const menuBtnY = isMobile ? 100 : 145;
-        const btnW = 200;
-        const btnH = isMobile ? 50 : 60;
+        // Dimensiones Aumentadas para Totem (1080px)
+        const mWidth = isMobile ? 400 : 800;
+        const mHeight = isMobile ? 450 : 600;
+        const hTitle = isMobile ? -140 : -180;
+        const titleSize = isMobile ? '38px' : '52px';
+        const btnY = isMobile ? 70 : 120;
+        const menuBtnY = isMobile ? 150 : 230;
+        const btnW = isMobile ? 280 : 450;
+        const btnH = isMobile ? 65 : 100;
 
         let modalBg = this.add.graphics();
         modalBg.fillStyle(0x1a1a1a, 0.95);
@@ -130,9 +130,9 @@ class UIScene extends Phaser.Scene {
         }).setOrigin(0.5);
         modalContainer.add(title);
 
-        let subtitle = this.add.text(0, hTitle + 20, 'Alcanza 600 puntos\nen 10 movimientos', {
+        let subtitle = this.add.text(0, hTitle + 70, 'Alcanza 600 puntos\nen 10 movimientos', {
             fontFamily: 'Fredoka',
-            fontSize: isMobile ? '16px' : '20px',
+            fontSize: isMobile ? '20px' : '32px',
             fill: '#ffcc00',
             align: 'center'
         }).setOrigin(0.5);
@@ -145,8 +145,8 @@ class UIScene extends Phaser.Scene {
 
         let btnText = this.add.text(0, btnY, '¡COMENZAR!', {
             fontFamily: 'Fredoka',
-            fontSize: isMobile ? '20px' : '24px',
-            fontWeight: '700',
+            fontSize: isMobile ? '26px' : '38px',
+            fontWeight: '900',
             fill: '#000000'
         }).setOrigin(0.5);
         modalContainer.add(btnText);
@@ -157,14 +157,14 @@ class UIScene extends Phaser.Scene {
         // Botón Menú Principal (Estilo secundario)
         let menuBtnBg = this.add.graphics();
         menuBtnBg.lineStyle(2, 0xffffff, 0.8);
-        const menuH = isMobile ? 40 : 50;
+        const menuH = isMobile ? 55 : 80;
         menuBtnBg.strokeRoundedRect(-btnW / 2, menuBtnY - menuH / 2, btnW, menuH, 15);
         modalContainer.add(menuBtnBg);
 
-        let menuBtnText = this.add.text(0, menuBtnY, 'MENÚ PRINCIPAL', {
+        let menuBtnText = this.add.text(0, menuBtnY, 'VOLVER AL INICIO', {
             fontFamily: 'Fredoka',
-            fontSize: isMobile ? '16px' : '18px',
-            fontWeight: '700',
+            fontSize: isMobile ? '20px' : '28px',
+            fontWeight: '900',
             fill: '#ffffff'
         }).setOrigin(0.5);
         modalContainer.add(menuBtnText);
