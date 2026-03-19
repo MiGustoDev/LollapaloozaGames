@@ -16,29 +16,8 @@ export default defineConfig({
                     dest: '.'
                 }
             ]
-        }),
-        VitePWA({
-            registerType: 'autoUpdate',
-            includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
-            manifest: {
-                name: 'Aperture Games',
-                short_name: 'ApertureGames',
-                description: 'Empanada Arcade - Menú de Juegos',
-                theme_color: '#ffffff',
-                icons: [
-                    {
-                        src: 'assets/LogoMiGusto2025.png',
-                        sizes: '192x192',
-                        type: 'image/png'
-                    },
-                    {
-                        src: 'assets/LogoMiGusto2025.png',
-                        sizes: '512x512',
-                        type: 'image/png'
-                    }
-                ]
-            }
         })
+        // VitePWA desactivado para evitar recargas constantes en el totem
     ],
     build: {
         outDir: 'dist',

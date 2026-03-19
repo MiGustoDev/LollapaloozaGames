@@ -38,6 +38,17 @@
     <footer class="main-footer footer-mobile">
         Desarrollado por el <span class="underline">Departamento de sistemas</span> de Mi Gusto 🥟
     </footer>
+    <script>
+        // Limpiar Service Workers antiguos para evitar bucles de recarga/intercalado
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('SW Unregistered');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
