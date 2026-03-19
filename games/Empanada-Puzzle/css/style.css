@@ -234,7 +234,7 @@ main {
 .puzzle-grid {
     display: grid;
     gap: 0.25rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: #111; /* Color sólido para mayor estabilidad visual */
     padding: 0.5rem;
     border-radius: 1.5rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -242,10 +242,11 @@ main {
     backdrop-filter: blur(4px);
     position: relative;
     overflow: hidden;
-    width: 90vw;
-    max-width: 850px;
+    width: 85vw;
+    max-width: 800px;
     aspect-ratio: 1/1;
-    visibility: hidden; /* Oculto hasta que el script lo posicione */
+    visibility: hidden; /* Oculto hasta que el script lo posiciones */
+    margin: 0 auto;
 }
 
 .puzzle-tile {
