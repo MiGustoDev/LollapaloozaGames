@@ -89,8 +89,8 @@ class GameScene extends Phaser.Scene {
         // Dynamic Tile Size Calculation
         const maxBoardWidth = this.game.config.width * 0.95; // Use 95% of screen width
         this.tileSize = Math.floor((maxBoardWidth - (this.gridSize - 1) * this.tileSpacing) / this.gridSize);
-        // Ensure tile size isn't too big on desktop
-        this.tileSize = Math.min(this.tileSize, 80);
+        // Ensure tile size isn't too big, but large enough for 1080px totem
+        this.tileSize = Math.min(this.tileSize, 125);
 
         const boardWidth = this.gridSize * (this.tileSize + this.tileSpacing);
         this.boardOffsetX = (this.game.config.width - boardWidth) / 2 + this.tileSize / 2;
