@@ -324,27 +324,63 @@ main {
     pointer-events: none;
 }
 
-.overlay h2 {
-    font-size: 6rem;
-    font-family: var(--font-display);
-    font-weight: 900;
-    color: var(--color-primary);
-    margin: 0 0 2rem 0;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+.card-glass {
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid var(--color-primary);
+    padding: 4rem;
+    border-radius: 3rem;
     text-align: center;
-    line-height: 1.1;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
 }
 
-.instructions-content {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2.5rem;
-    border-radius: 2rem;
-    margin-bottom: 2.5rem;
-    text-align: left;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 90%;
-    width: 450px;
+.title-main {
+    font-size: 8rem !important;
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    font-weight: 900;
+    margin-bottom: 3rem !important;
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+}
+
+.instructions-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+}
+
+.step-number {
+    background: var(--color-primary);
+    color: black;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.step p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
 }
 
 .instructions-content p {
@@ -421,18 +457,17 @@ main {
     text-align: center;
 }
 
-.cta-btn.secondary {
-    margin-top: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 1rem 3rem;
-    font-size: 1.4rem;
-    box-shadow: none;
+.cta-btn.main-btn {
+    width: 100%;
+    padding: 2rem;
+    font-size: 2.5rem;
 }
 
-.cta-btn.secondary:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.02);
+.cta-btn.secondary {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-size: 1.5rem;
 }
 
 .text-red {
@@ -598,27 +633,24 @@ main {
         -webkit-backdrop-filter: blur(15px);
     }
 
-    .overlay h2 {
-        font-size: 2.25rem;
-        margin-bottom: 2rem;
-        margin-top: 0;
-        /* Reset for centering */
+    .title-main {
+        font-size: 3.5rem !important;
+        margin-bottom: 2rem !important;
     }
 
-    .instructions-content {
-        padding: 1.5rem;
-        width: 100%;
-        max-width: 340px;
-        margin-bottom: 2rem;
-        margin-top: 0;
+    .card-glass {
+        padding: 2rem;
+        border-radius: 2rem;
     }
 
-    .instructions-content p {
-        font-size: 1.25rem;
-    }
-
-    .instructions-content li {
+    .step p {
         font-size: 1.1rem;
+    }
+
+    .step-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
     }
 
     .cta-btn {
