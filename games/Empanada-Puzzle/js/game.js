@@ -137,7 +137,6 @@ const isWin = (currentTiles) => {
 
 // Game Logic
 const initGame = () => {
-    // Ya no barajamos aquí, usamos el estado global inicial
     timeLeft = 60;
     isGameOver = false;
     isVictory = false;
@@ -147,18 +146,25 @@ const initGame = () => {
     clearInterval(timerInterval);
     updateTimerDisplay();
 
+    // HACER EL JUEGO INVISIBLE MIENTRAS ESTAMOS EN EL MENÚ
+    const gameBoard = document.getElementById('game-container');
+    if (gameBoard) gameBoard.style.display = 'none';
+
     startOverlay.classList.remove('hidden');
     resultModal.classList.add('hidden');
     timerIconBox.classList.remove('bg-red', 'animate-pulse');
     timerDisplay.classList.remove('text-red');
-
-    // renderGrid() ya no es necesario aquí porque initApp() dejó todo listo
 };
 
 
 const startGame = () => {
     if (hasStarted) return;
     hasStarted = true;
+    
+    // MOSTRAR EL JUEGO AL EMPEZAR
+    const gameBoard = document.getElementById('game-container');
+    if (gameBoard) gameBoard.style.display = 'flex';
+    
     startOverlay.classList.add('hidden');
 
     // Start Timer
