@@ -69,10 +69,9 @@ retryButton.addEventListener("click", function () {
     gameRunning = false; // Stop game loop until "COMENZAR" is clicked
 });
 let spritesheet = "pacman-spritesheet";
-let spritesheetPath = "https://raw.githubusercontent.com/kudchikarsk/phaser-pacman/master/assets/images/pacmansprites.png";
-let tilesPath = "https://raw.githubusercontent.com/kudchikarsk/phaser-pacman/master/assets/images/background.png";
-let mapPath =
-    "https://raw.githubusercontent.com/kudchikarsk/phaser-pacman/master/assets/levels/codepen-level.json";
+let spritesheetPath = "pacmansprites.png";
+let tilesPath = "background.png";
+let mapPath = "codepen-level.json";
 
 // Touch Control Listeners
 document.getElementById('btn-up').addEventListener('pointerdown', () => player.queueTurn(Phaser.UP));
@@ -116,8 +115,8 @@ function preload() {
     });
     this.load.tilemapTiledJSON("map", mapPath);
     this.load.image(tiles, tilesPath);
-    this.load.image("pill", "https://raw.githubusercontent.com/kudchikarsk/phaser-pacman/master/assets/images/pac%20man%20pill/spr_pill_0.png");
-    this.load.image("lifecounter", "https://raw.githubusercontent.com/kudchikarsk/phaser-pacman/master/assets/images/pac%20man%20life%20counter/spr_lifecounter_0.png");
+    this.load.image("pill", "pill.png");
+    this.load.image("lifecounter", "lifecounter.png");
     this.load.image("pacman-empanada", "pacman-empanada.png");
     this.load.image("pacman-empanada2", "pacman-empanada2.png");
     this.load.image("ghost1", "fantasma-empanada1.png");
@@ -191,10 +190,10 @@ function create() {
     });
     const tileset = map.addTilesetImage(tiles);
 
-    layer1 = map.createStaticLayer("Layer 1", tileset, 0, 0);
+    layer1 = map.createLayer("Layer 1", tileset, 0, 0);
     layer1.setCollisionByProperty({ collides: true });
 
-    layer2 = map.createStaticLayer("Layer 2", tileset, 0, 0);
+    layer2 = map.createLayer("Layer 2", tileset, 0, 0);
     layer2.setCollisionByProperty({ collides: true });
 
     let spawnPoint = map.findObject("Objects", obj => obj.name === "Player");

@@ -230,14 +230,16 @@ const handleTileClick = (index) => {
         const tileEl = tileElements[tileId];
         const { row: r1, col: c1 } = getRowCol(index);
         const { row: r2, col: c2 } = getRowCol(emptyIndex);
+        
         isAnimating = true;
+        // Animamos los valores directos de left/top para evitar saltos
         gsap.to(tileEl, {
-            xPercent: (c2 - c1) * 100, yPercent: (r2 - r1) * 100,
-            duration: 0.15, ease: "power2.out",
+            left: `${c2 * 33.333}%`,
+            top: `${r2 * 33.333}%`,
+            duration: 0.15,
+            ease: "power2.out",
             onComplete: () => {
-                gsap.set(tileEl, { xPercent: 0, yPercent: 0 });
                 tiles = newTiles;
-                renderGrid();
                 isAnimating = false;
                 if (isWin(tiles)) handleWin();
             }
@@ -280,7 +282,10 @@ const renderGrid = () => {
     tiles.forEach((tileId, index) => {
         const { row, col } = getRowCol(index);
         const el = tileElements[tileId];
-        if (el) { el.style.gridRow = row + 1; el.style.gridColumn = col + 1; }
+        if (el) {
+            el.style.left = `${col * 33.333}%`;
+            el.style.top = `${row * 33.333}%`;
+        }
     });
 };
 
