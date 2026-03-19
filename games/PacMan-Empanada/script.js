@@ -921,14 +921,6 @@ class Player {
         this.score = 0;
         this.active = true;
         this.sprite.anims.play(this.anim.Stay, true);
-        let ref = this;
-        this.sprite.on(
-            "animationcomplete",
-            function (animation, frame) {
-                ref.animComplete(animation, frame);
-            },
-            scene
-        );
         this.playing = false;
         this.nextDirection = Phaser.NONE;
     }
@@ -939,17 +931,19 @@ class Player {
     }
 
     die() {
+        if (!this.active) return;
         this.active = false;
         this.playing = false;
         this.life--;
         this.moveTo = new Phaser.Geom.Point();
+        this.sprite.setVelocity(0, 0);
         this.sprite.anims.play(this.anim.Die, true);
-    }
 
-    animComplete(animation, frame) {
-        if (animation.key == this.anim.Die) {
+        // Llamamos al callback de muerte después de un pequeño retraso visual
+        // Esto soluciona que la pantalla de Game Over no aparezca si la animación no se completa
+        window.setTimeout(() => {
             this.dieCallback();
-        }
+        }, 800);
     }
 
     respawn() {

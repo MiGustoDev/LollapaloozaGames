@@ -5,10 +5,10 @@ class LevelManager {
                 id: 1,
                 objective: {
                     type: 'score',
-                    value: 1000,
-                    description: 'Alcanza 1000 puntos'
+                    value: 600,
+                    description: 'Alcanza 600 puntos'
                 },
-                moves: 20,
+                moves: 10,
                 difficulty: 1
             }
         ];

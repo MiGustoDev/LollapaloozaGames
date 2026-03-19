@@ -122,13 +122,21 @@ class UIScene extends Phaser.Scene {
         modalBg.strokeRoundedRect(-mWidth / 2, -mHeight / 2, mWidth, mHeight, 20);
         modalContainer.add(modalBg);
 
-        let title = this.add.text(0, hTitle, '¿Estás listo para\nel desafío?', {
+        let title = this.add.text(0, hTitle - 20, '¡NUEVO DESAFÍO!', {
             fontFamily: 'Chewy',
             fontSize: titleSize,
             fill: '#ffffff',
             align: 'center'
         }).setOrigin(0.5);
         modalContainer.add(title);
+
+        let subtitle = this.add.text(0, hTitle + 20, 'Alcanza 600 puntos\nen 10 movimientos', {
+            fontFamily: 'Fredoka',
+            fontSize: isMobile ? '16px' : '20px',
+            fill: '#ffcc00',
+            align: 'center'
+        }).setOrigin(0.5);
+        modalContainer.add(subtitle);
 
         let btnBg = this.add.graphics();
         btnBg.fillStyle(0xffcc00, 1);
