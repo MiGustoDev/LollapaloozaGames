@@ -105,15 +105,15 @@ class UIScene extends Phaser.Scene {
         let modalContainer = this.add.container(width / 2, height / 2);
         modalContainer.setScale(0);
 
-        // Dimensiones Aumentadas para Totem (1080px)
-        const mWidth = isMobile ? 400 : 800;
-        const mHeight = isMobile ? 450 : 600;
-        const hTitle = isMobile ? -140 : -180;
-        const titleSize = isMobile ? '38px' : '52px';
-        const btnY = isMobile ? 70 : 120;
-        const menuBtnY = isMobile ? 150 : 230;
-        const btnW = isMobile ? 280 : 450;
-        const btnH = isMobile ? 65 : 100;
+        // Dimensiones Aumentadas para Totem (1080px) - Ahora reducidas para Mobile
+        const mWidth = isMobile ? 360 : 800;
+        const mHeight = isMobile ? 380 : 600;
+        const hTitle = isMobile ? -110 : -180;
+        const titleSize = isMobile ? '34px' : '52px';
+        const btnY = isMobile ? 60 : 120;
+        const menuBtnY = isMobile ? 135 : 230;
+        const btnW = isMobile ? 250 : 450;
+        const btnH = isMobile ? 55 : 100;
 
         let modalBg = this.add.graphics();
         modalBg.fillStyle(0x1a1a1a, 0.95);
