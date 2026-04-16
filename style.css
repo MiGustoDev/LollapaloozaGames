@@ -98,22 +98,6 @@ h1 {
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .menu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .logo {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 900px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 .main-footer {
     padding: 2rem 1rem;
     width: 100%;
@@ -130,11 +114,56 @@ h1 {
     display: none;
 }
 
+.developer-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-footer .underline {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 600px) {
     body {
         justify-content: flex-start;
         /* Restore top-alignment for mobile scrolling */
         padding-top: 2rem;
+    }
+
+    .container {
+        padding: 1.2rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .game-card {
+        aspect-ratio: 1 / 1;
+        min-height: auto;
+        padding: 1rem;
+    }
+
+    .icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .game-card h2 {
+        font-size: 1rem;
+    }
+
+    .logo {
+        max-width: 200px;
     }
 
     .main-footer {
@@ -150,15 +179,4 @@ h1 {
     .footer-mobile {
         display: block;
     }
-}
-
-.developer-link {
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.main-footer .underline {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: underline;
 }
