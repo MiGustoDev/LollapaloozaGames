@@ -1,6 +1,6 @@
 {
-  "name": "Memory 3x3 Master",
-  "short_name": "Memory 3x3",
+  "name": "Empanada Memory",
+  "short_name": "Empanada Memory",
   "description": "Test your memory with this fun matching game!",
   "start_url": "/",
   "display": "standalone",
